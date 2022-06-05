@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
+
+    <!-- this part is for finding train -->
+    <div class="" style="background-image: url('https://images.unsplash.com/photo-1644770633699-5129770e0404?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1304&q=80'); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+            <div class="row">
+
+                <!-- left part -->
+                <div class="col-lg-6 mt-5 mb-5 text-white" style="font-size: 35px;">
+                    <div class="pt-5">
+                        <h1 class="shadow-lg">Railway Ticketing System</h1>
+                    </div>
+                </div>
+
+                <!-- right part -->
+                <div class="col-lg-6 mx-auto mt-5 mb-5">
+                    <div style="background-color: #055160;" class="card form-color">
+                        <form role="search" action="available_train">
+                            <div class="form-row m-2 mt-4">
+                              <div class="col">
+                                <label for="rfrom" class="text-white">Route From:</label>
+                                <select name="rfrom" id="rfrom" class="form-control" required>
+                                    <option value="{{form.source}}"></option>
+                                </select>
+                              </div>
+                              <div class="col">
+                                <label for="to" class="text-white">Route To:</label>
+                                <select name="to" id="to" class="form-control" required>
+                                    <option value="{{form.destination}}"></option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-row m-2 mt-2">
+                                <div class="col">
+                                    <label for="date" class="text-white">Date:</label>
+                                  <input type="date" name="date" class="form-control" placeholder="Date" id="date">
+                                </div>
+                                <div class="col">
+                                    <label for="ctype" class="text-white">Class:</label>
+                                    <select name="ctype" id="ctype" class="form-control" required>
+                                        <option value="{{form.class_type}}"></option>
+                                    </select>
+                                </div>
+                              </div>
+
+                              <div class="form-row m-2 mt-2">
+                                <div class="col">
+                                    <label for="pa" class="text-white">Passenger(Adult):</label>
+                                    <select name="pa" id="pa" class="form-control" required>
+                                        <option selected>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="pc" class="text-white">Passenger(Child):</label>
+                                    <select name="pc" id="pc" class="form-control" required>
+                                        <option selected>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                              </div>
+
+                              <div class="form-row">
+                                <div class="col text-warning pl-3">
+                                    <p>Up to 5 seats*</p>
+                                </div>
+                              </div>
+
+                              <div class="form-row">
+                                <div class="col pl-0">
+                                  <input type="submit" value="find" class="bg-success mb-4 mt-2">
+                                </div>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
