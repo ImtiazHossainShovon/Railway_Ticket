@@ -7,7 +7,7 @@ window.onload = function(){
         console.log(ticket);
         console.log(window);
         var opt = {
-            filename : 'myTrainTicket.pdf',
+            filename : 'bdRailwayTicket.pdf',
         };
         html2pdf().from(ticket).set(opt).save();
     })
